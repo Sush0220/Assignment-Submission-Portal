@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Admin Dashboard</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>User</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let assignment of assignments">
+                    <td>{{ assignment.userId.name }}</td>
+                    <td>{{ assignment.task }}</td>
+                    <td>
+                        <span
+                            [ngClass]="{'text-success': assignment.status === 'Accepted', 'text-danger': assignment.status === 'Rejected', 'text-warning': assignment.status === 'Pending'}">
+                            {{ assignment.status }}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn btn-success btn-sm me-2" (click)="acceptAssignment(assignment._id)">
+                            Accept
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="rejectAssignment(assignment._id)">
+                            Reject
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

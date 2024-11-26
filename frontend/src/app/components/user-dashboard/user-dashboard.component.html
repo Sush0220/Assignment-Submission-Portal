@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">User Dashboard</h2>
+    <form (ngSubmit)="submitAssignment()">
+        <!-- Task Textarea -->
+        <div class="form-group mb-3">
+            <label for="task">Task</label>
+            <textarea id="task" class="form-control" [(ngModel)]="task" name="task" placeholder="Enter your task"
+                rows="4" required></textarea>
+        </div>
+
+        <!-- Admin Selection -->
+        <div class="form-group mb-3">
+            <label for="selectedAdmin">Assign to Admin</label>
+            <select id="selectedAdmin" class="form-select" [(ngModel)]="selectedAdmin" name="selectedAdmin" required>
+                <option *ngFor="let admin of admins" [value]="admin._id">{{ admin.name }}</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100">Submit Assignment</button>
+    </form>
+</div>
