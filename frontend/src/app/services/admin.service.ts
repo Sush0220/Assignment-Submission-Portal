@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminService {
-  private rootUrl: string = 'http://localhost:5000/api/admins';
+  private rootUrl: string = 'https://submitease.onrender.com/api/admins';
   constructor(private http: HttpClient) { }
 
   getAssigments(): Observable<any> {

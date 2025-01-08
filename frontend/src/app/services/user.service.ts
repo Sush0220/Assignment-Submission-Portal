@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private rootUrl = 'http://localhost:5000/api/users'
+  private rootUrl = 'https://submitease.onrender.com/api/users'
   constructor(private http: HttpClient) { }
 
   uploadAssignment(task: string, admin: string): Observable<any> {

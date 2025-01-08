@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private rootUrl = 'http://localhost:5000/api/users';
+  private rootUrl = 'https://submitease.onrender.com/api/users';
   constructor(private http: HttpClient, private router: Router) { }
 
   register(name: string, email: string, password: string, role: string): Observable<any> {
